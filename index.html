@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidxs a RITMOS</title>
+    
+    <!-- Fuentes Elegantes (Google Fonts) para igualar el estilo del dossier -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS para estructura rápida -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuración de estilos personalizados -->
+    <style>
+        :root {
+            --color-bg: #F9F7F2; /* Crema suave / Papel */
+            --color-text: #2C2C2C; /* Carbón suave */
+            --color-accent: #6B705C; /* Verde Oliva apagado */
+            --color-accent-dark: #4A4E40;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'Montserrat', sans-serif; /* Texto cuerpo limpio */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif; /* Títulos estilo editorial */
+        }
+
+        /* Estilo sutil para los inputs */
+        .custom-input {
+            background-color: transparent;
+            border-bottom: 1px solid #A5A58D;
+            transition: all 0.3s ease;
+        }
+        .custom-input:focus {
+            outline: none;
+            border-bottom: 1px solid var(--color-accent);
+        }
+
+        /* Botón elegante */
+        .btn-submit {
+            background-color: var(--color-accent);
+            letter-spacing: 0.1em;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: var(--color-accent-dark);
+        }
+
+        /* Animación suave de entrada */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center justify-center p-4 sm:p-0">
+
+    <div class="max-w-md w-full bg-[#F9F7F2] sm:shadow-xl sm:my-10 overflow-hidden fade-in relative">
+        
+        <!-- IMAGEN SUPERIOR (Hero) -->
+        <div class="w-full h-64 overflow-hidden relative">
+            <!-- Usamos la primera imagen subida como cabecera -->
+            <img src="65f6fe91-6cc9-4340-a5a8-2bd892e29749.jpg" 
+                 alt="Ritmos Naturaleza" 
+                 class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
+                 onerror="this.style.display='none'; document.getElementById('placeholder-1').style.display='flex';">
+            
+            <!-- Fallback por si la imagen no carga -->
+            <div id="placeholder-1" class="hidden w-full h-full bg-gray-200 items-center justify-center text-gray-400">
+                <span>Imagen 1 Aquí</span>
+            </div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="px-8 py-10 text-center">
+            
+            <h2 class="text-sm uppercase tracking-[0.2em] text-[#A5A58D] mb-2 font-medium">Hogar en Conexión</h2>
+            <h1 class="text-5xl mb-6 font-normal text-[#2C2C2C] italic">RITMOS</h1>
+            
+            <p class="text-gray-600 mb-8 font-light leading-relaxed text-sm">
+                Bienvenidxs. <br>
+                La casa cambia cuando cambia la forma en que la habitas. Deja tus datos para recibir la <strong>Guía Completa</strong> y comenzar tu viaje.
+            </p>
+
+            <!-- FORMULARIO FORMSUBMIT.CO -->
+            <!-- IMPORTANTE: CAMBIA 'TU_CORREO_AQUI' POR TU EMAIL REAL -->
+            <form action="https://formsubmit.co/TU_CORREO_AQUI" method="POST" class="space-y-6 text-left">
+                
+                <!-- Configuración oculta de FormSubmit -->
+                <input type="hidden" name="_subject" value="Nuevo Lead RITMOS: Solicitud de Guía">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <!-- Redirección opcional (puedes poner tu web o instagram aquí) -->
+                <!-- <input type="hidden" name="_next" value="https://tuweb.com/gracias"> -->
+
+                <!-- Nombre -->
+                <div>
+                    <label for="name" class="block text-xs uppercase tracking-widest text-gray-500 mb-1">Nombre</label>
+                    <input type="text" name="name" required 
+                           class="custom-input w-full py-2 text-lg text-[#2C2C2C] placeholder-gray-300"
+                           placeholder="Tu nombre">
+                </div>
+
+                <!-- Apellido -->
+                <div>
+                    <label for="lastname" class="block text-xs uppercase tracking-widest text-gray-500 mb-1">Apellido</label>
+                    <input type="text" name="lastname" required 
+                           class="custom-input w-full py-2 text-lg text-[#2C2C2C] placeholder-gray-300"
+                           placeholder="Tu apellido">
+                </div>
+
+                <!-- Correo -->
+                <div>
+                    <label for="email" class="block text-xs uppercase tracking-widest text-gray-500 mb-1">Correo Electrónico</label>
+                    <input type="email" name="email" required 
+                           class="custom-input w-full py-2 text-lg text-[#2C2C2C] placeholder-gray-300"
+                           placeholder="ejemplo@correo.com">
+                </div>
+
+                <!-- Botón -->
+                <div class="pt-4">
+                    <button type="submit" class="btn-submit w-full text-white font-medium py-3 px-4 uppercase text-xs rounded-sm shadow-md hover:shadow-lg transform transition">
+                        Recibir la Guía
+                    </button>
+                </div>
+            </form>
+
+            <p class="mt-6 text-[10px] text-gray-400 uppercase tracking-wider">
+                Respetamos tu privacidad y tus ritmos.
+            </p>
+        </div>
+
+        <!-- IMAGEN INFERIOR (Detalle) -->
+        <div class="w-full h-40 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
+            <!-- Usamos la segunda imagen como pie estético -->
+            <img src="645337f5-c1d3-47ab-8b92-5ef656c6d28f.jpg" 
+                 alt="Detalle Naturaleza" 
+                 class="w-full h-full object-cover"
+                 onerror="this.style.display='none';">
+        </div>
+
+    </div>
+
+</body>
+</html>
